@@ -1,3 +1,16 @@
+import { DUMMY_NEWS } from "@/dummy-news";
+
 export default function NewsDetailPage({ params }) {
-  return <p>{params.page}</p>;
+  const newsItem = DUMMY_NEWS.find((item) => item.slug === params.slug);
+
+  return (
+    <article>
+      <header>
+        <img src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
+        <h1>{newsItem.title}</h1>
+        <time dateTime={newsItem.date}>{newsItem.date}</time>
+      </header>
+      <p>{newsItem.content}</p>
+    </article>
+  );
 }
