@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default async function NewsPage() {
-  const news = getAllNews();
+  const news = await getAllNews();
 
   return (
     <>
