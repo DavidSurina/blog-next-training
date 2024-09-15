@@ -1,16 +1,18 @@
 import NewsList from "@/components/news-list";
-import { DUMMY_NEWS } from "@/dummy-news";
+import { getAllNews } from "@/lib/news";
 
 export const metadata = {
   title: "All meals",
   description: "Browse delicious meals shared by users.",
 };
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const news = getAllNews();
+
   return (
     <>
       <h1>News Page</h1>
-      <NewsList news={DUMMY_NEWS} />
+      <NewsList news={news} />
     </>
   );
 }
